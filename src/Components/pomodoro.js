@@ -2,7 +2,7 @@ import React, {useState, useEffect}from "react";
 
 export default function Pomodoro() {
   const [minutes, setMinutes] = useState(25);
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(5);
   const [displayMessage, setDisplayMessage] = useState(false);
   
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Pomodoro() {
   return (
     <div>
       <div className="message">
-        <div></div>
+        {displayMessage && <div>Time for a Break!</div>}
       </div>
       <div className="Timer">
         {timerMinutes}:{timerSeconds}
